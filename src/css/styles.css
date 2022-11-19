@@ -200,6 +200,23 @@ html {
   width: 1em;
   height: 1em;
 }
+.searchbar{
+  background-image: url("../images/searchIconBTG.png");
+  background-size: 20px 20px; 
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+.footer{
+  position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;   
+}
 
 .navbar-dark .navbar-toggler-icon {
   border: none;

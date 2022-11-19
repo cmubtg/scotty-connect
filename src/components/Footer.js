@@ -58,7 +58,7 @@ const LeftFooter = () => {
     <Container>
       <Row className="text-secondary mt-2">
         <small>
-          Want to reach out? Send us a line at{" "}
+          Have any questions? Feel free to reach out at {" "}
           <a href="mailto:info@cmubtg.com" target="_blank" rel="noopener noreferrer">info@cmubtg.com</a>
         </small>        
       </Row>   
@@ -103,13 +103,10 @@ const Logo = () => {
 const Footer = () => {
   return (
     <div className="mt-5 border-top bg-white">
-      <Container className="py-3 mt-3" id="contact">
+      <Container className="footer" id="contact">
         <Row>
           <Col>
             <LeftFooter />
-          </Col>
-          <Col>
-            <MailchimpForm />         
           </Col>
         </Row>
         <Logo />
