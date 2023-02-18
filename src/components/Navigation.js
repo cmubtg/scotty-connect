@@ -15,7 +15,7 @@ function Navigation() {
     image: {
       width: '52px',
       height: '35px',
-      left: '38px',
+      marginLeft: '36px',
       top: '43px',
     }
   }
