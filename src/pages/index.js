@@ -4,20 +4,16 @@
 //Created by David You <dsyou@andrew.cmu.edu>
 
 import React from "react";
-import Badge from "react-bootstrap/Badge";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import Companies from "../components/Companies";
 import Layout from "../components/Layout"
-import Helmet from "react-helmet"
-import BTGCover from "../images/btg-cover.png";
 import './index.css'
 
 const searchText = () =>
 {
   return(
-    <h className = "searchText"> Search peoplem courses, majors...</h>
+    <h className = "searchText"> Search people, courses, majors...</h>
   )
 }
 function Home() {
