@@ -16,7 +16,7 @@ Get a local copy of the website repository
 
 ```sh
 git clone https://github.com/cmubtg/website.git
-cd website
+cd scotty-connect
 ```
 
 ### Install Dependencies

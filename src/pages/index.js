@@ -4,24 +4,26 @@
 //Created by David You <dsyou@andrew.cmu.edu>
 
 import React from "react";
-import Badge from "react-bootstrap/Badge";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import Companies from "../components/Companies";
 import Layout from "../components/Layout"
-import Helmet from "react-helmet"
-import BTGCover from "../images/btg-cover.png";
+import './index.css'
 
+const searchText = () =>
+{
+  return(
+    <h className = "searchText"> Search people, courses, majors...</h>
+  )
+}
 function Home() {
   return (
     <Layout>
       <Container className="mt-md-1 pt-md-4">
         <Row className="pt-1 mt-5">
           <Col>
-            <h1 class="display-3 text-black font-weight-boldest">
-              Hello
-            </h1>
+            <h1 class="home" style={{ marginTop: '20%' }}> Let's get on with&nbsp;</h1><h1 class="home2">course planning</h1><h1 class="home">!</h1>
+    
             <input type="text" className="searchbar" onkeyup="myFunction()" placeholder="Search people, courses, majors..." title="Type in a name"></input>
           </Col>
         </Row>
