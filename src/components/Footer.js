@@ -41,7 +41,7 @@ function Footer () {
           </div>
           <div>
             <span style={footerStyles.text}>Contact </span>
-            <a style={footerStyles.text} href="https://cmubtg.com/">@info@cmu.btg.com</a>
+            <a style={footerStyles.text} href="mailto:info@cmubtg.com">@info@cmu.btg.com</a>
             <span style={footerStyles.text}> for inquires and concerns</span>
           </div>
         </div>
