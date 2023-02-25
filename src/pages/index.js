@@ -34,7 +34,6 @@ function Home() {
     console.log(input)
     const listener = event => {
       if (event.code === "Enter") {
-        console.log("Enter key was pressed. Run your function.");
         handleSearch(input)
       }
     };

@@ -3,9 +3,12 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Layout from "../components/Layout"
-import SearchResultContainer from "../components/SearchResultContainer";
 
-import './index.css'
+import SearchResult from "../components/SearchResult";
+
+import SearchData from '../data/searchData.json'
+
+import '../css/searchResult.css'
 
 function Results() {
   return (
@@ -14,7 +17,15 @@ function Results() {
         <Row className="pt-1 mt-5">
           <Col>
             <input type="text" className="searchbar" value={window.history.state.search} title="Type in a name"></input>
-            <SearchResultContainer/>
+
+            <div className="searchResults_container">
+            {SearchData.map((resData, index) => {
+                return (
+                  <SearchResult key={index} data={resData}/>
+                )
+            })}
+            </div>
+            
           </Col>
         </Row>
       </Container>
