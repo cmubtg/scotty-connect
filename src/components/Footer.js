@@ -7,8 +7,8 @@ function Footer () {
       bottom: "0",
       width: "auto",
       height: "5rem",
-      left: "5rem",
-      right: "5rem",
+      left: "2.5rem",
+      right: "2.5rem",
     },
     box : {
       backgroundColor: "#D9D9D9",
