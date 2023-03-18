@@ -25,6 +25,7 @@ function Navigation() {
         <Navbar style={headerStyles.header}>
           <img src={Logo} alt={Logo} style ={headerStyles.image} />
         </Navbar>
+
     </div>
   );
 }
