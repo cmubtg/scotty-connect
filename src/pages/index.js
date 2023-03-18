@@ -24,7 +24,7 @@ function Home() {
           <Col>
             <h1 class="home" style={{ marginTop: '20%' }}> Let's get on with&nbsp;</h1><h1 class="home2">course planning</h1><h1 class="home">!</h1>
     
-            <input type="text" className="searchbar" onkeyup="myFunction()" placeholder="Search people, courses, majors..." title="Type in a name"></input>
+            <input type="text" className="searchbar" onkeyup="myFunction()" placeholder="Search students, courses, majors, minors..." title="Type in a name"></input>
           </Col>
         </Row>
       </Container>
