@@ -4,7 +4,7 @@ import Logo from '../images/btg-logo-white-red-footer.svg';
 function Footer () {
   const footerStyles = {
     footer : {
-      position: "absolute",
+      position: "relative",
       bottom: "0",
       width: "auto",
       height: "5rem",
@@ -18,8 +18,8 @@ function Footer () {
       border: "1px solid grey",
     },
     box : {
-      height: "3rem",
-      width: "3rem",
+      height: "3",
+      width: "3",
       borderWidth: '0',
     },
     textContainer : {
@@ -51,12 +51,12 @@ function Footer () {
         <div style={footerStyles.container}>
           <div style={footerStyles.textContainer}>
             <div>
-              <span style={footerStyles.text}>Created by Carnegie Mellon University Business Technology Group</span>
+              <span style={footerStyles.text}>Carnegie Mellon University Business Technology Group</span>
             </div>
             <div>
-              <span style={footerStyles.text}>Contact </span>
-              <a style={footerStyles.text1} href="mailto:info@cmubtg.com">@info@cmu.btg.com</a>
-              <span style={footerStyles.text}> for inquires and concerns</span>
+              <span style={footerStyles.text}>©</span>
+              
+              <span style={footerStyles.text}> 2023</span>
             </div>
           </div>
           <img src={Logo} alt={Logo} style={footerStyles.box} />
