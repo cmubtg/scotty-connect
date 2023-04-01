@@ -23,7 +23,7 @@ function ProfileSchedule({courseData}) {
     }
     setSelected(i)
   }
-
+  console.log(courseData)
   return (
     <Layout>
       <Container className="mt-md-1 pt-md-4">
@@ -41,9 +41,8 @@ function ProfileSchedule({courseData}) {
 
                         <div className={`${selected === i ? 'profile_body show' : 'profile_body '}`}>
                           {/* Schedule for each semester in the year */}
-                          <p>Potenti nulla litora gravida adipiscing rhoncus scelerisque conubia cras purus. Dapibus arcu convallis habitant nullam lorem fringilla eleifend curabitur congue duis eros donec. Mauris eros sapien tincidunt montes dignissim ante sapien, neque pellentesque volutpat! Ipsum varius mollis pretium hendrerit arcu vivamus nibh ligula laoreet. Elementum eros lorem vitae, leo dolor condimentum mollis montes. Tempus mollis.</p>   
-                          {/* <SemesterSchedule data={yearInfo[0]}/>
-                          <SemesterSchedule data={yearInfo[1]}/> */}
+                          <SemesterSchedule semesterInfo={yearInfo[0]}/>
+                          <SemesterSchedule semesterInfo={yearInfo[1]}/>
                         </div>
                       </div>
                     )})
