@@ -5,7 +5,7 @@ function Footer () {
   const footerStyles = {
     footer : {
       position: "absolute",
-      bottom: "0",
+      bottom: "10",
       width: "auto",
       height: "5rem",
       left: "2.5rem",
