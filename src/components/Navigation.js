@@ -1,29 +1,19 @@
 import React from "react";
 import Logo from '../images/logo.svg';
 import { Navbar } from "react-bootstrap";
-
+import { navigate } from 'gatsby';
+import '../css/navigation.css';
 function Navigation() {
-  const headerStyles = {
-    header: {
-      position: 'fixed',
-      top: '0',
-      left: '0',
-      backgroundColor: '#EC454C',
-      width: '100%',
-      height: '60px',
-    },
-    image: {
-      width: '52px',
-      height: '35px',
-      marginLeft: '36px',
-      top: '43px',
-    }
+
+  const handleClick = () => {
+    navigate('/');
+    console.log('clicked');
   }
 
   return (
     <div>
-        <Navbar style={headerStyles.header}>
-          <img src={Logo} alt={Logo} style ={headerStyles.image} />
+        <Navbar className='navHeader'>
+           <img src={Logo} alt={Logo} className='navImage' onClick={handleClick}/>
         </Navbar>
     </div>
   );
