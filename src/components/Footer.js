@@ -4,8 +4,8 @@ import Logo from '../images/btg-logo-white-red-footer.svg';
 function Footer () {
   const footerStyles = {
     footer : {
-      position: "absolute",
-      bottom: "10",
+      position: "relative",
+      bottom: "0",
       width: "auto",
       height: "5rem",
       left: "2.5rem",
