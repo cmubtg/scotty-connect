@@ -15,19 +15,31 @@ import '../css/profile.css'
 // 
 function ProfileSchedule({courseData}) {
 
+  const [selected, setSelected] = useState(0)
+
+  const toggle = (i) => {
+    if (selected == i){
+      return setSelected(null)
+    }
+    setSelected(i)
+  }
+
   return (
     <Layout>
       <Container className="mt-md-1 pt-md-4">
-        <Row className="pt-1 mt-5">
+        <Row className="pt-1 mt-2">
             <Col>
-              <div className='profile_courses'>    
+              <div className='accordion'>    
                   {courseData.map((yearInfo, i) => {
                     return(
-                      <div className='profile_year'>
-                        <div className='profile_header'>
+                      <div className='profile'>
+
+                        <div className='profile_title' onClick={() => toggle(i)}>
+                            <div className={`profile_btn ${selected === i ? 'active' : ''}`}></div>
                             <h3>{`Year ${i+1}`}</h3>
                         </div>
-                        <div className='profile_body'>
+
+                        <div className={`${selected === i ? 'profile_body show' : 'profile_body '}`}>
                           {/* Schedule for each semester in the year */}
                           <p>Potenti nulla litora gravida adipiscing rhoncus scelerisque conubia cras purus. Dapibus arcu convallis habitant nullam lorem fringilla eleifend curabitur congue duis eros donec. Mauris eros sapien tincidunt montes dignissim ante sapien, neque pellentesque volutpat! Ipsum varius mollis pretium hendrerit arcu vivamus nibh ligula laoreet. Elementum eros lorem vitae, leo dolor condimentum mollis montes. Tempus mollis.</p>   
                           {/* <SemesterSchedule data={yearInfo[0]}/>
