@@ -7,8 +7,9 @@ import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import Layout from "../components/Layout"
-import './index.css'
+import Layout from "../components/Layout";
+import Modal from "../components/Modal";
+import './index.css';
 
 const searchText = () =>
 {
