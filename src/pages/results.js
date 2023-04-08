@@ -36,7 +36,7 @@ function Results() {
           </Col>
         </Row>
       </Container>
-      </Layout>
+    </Layout>
   );
 }
 

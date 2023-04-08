@@ -1,10 +1,24 @@
 import React from 'react'
 import david from '../images/team/david.jpg'
-import '../css/searchResult.css'
+import blank from '../images/searchResults/blankStar.png'
+import filled from '../images/searchResults/filledStar.png'
 
+import '../css/searchResult.css'
 
 const SearchResult = ({data}) => {
 
+
+
+function changeTofilled() {
+  let blankStar = document.getElementById("star");
+
+  if (blankStar.getAttribute('src') === blank) {
+    blankStar.setAttribute('src', filled);
+  }
+  else {
+    blankStar.setAttribute('src', blank);
+  }
+}
 
 
   return (
@@ -20,9 +34,11 @@ const SearchResult = ({data}) => {
               )
           })}
           </h4>
+          <img id="star" src={blank} 
+             alt="BlankStar" className = 'searchResults_star' onClick={changeTofilled}></img> 
+        </div>
         </div>
       </>
-
 
         
   )

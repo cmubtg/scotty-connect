@@ -15,6 +15,7 @@ function Navigation() {
         <Navbar className='navHeader'>
            <img src={Logo} alt={Logo} className='navImage' onClick={handleClick}/>
         </Navbar>
+
     </div>
   );
 }
