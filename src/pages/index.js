@@ -55,7 +55,7 @@ function Home() {
 
             {/* TODO: Make Search Bar its own component */}
             <input type="text" id="searchBar" className="searchbar" placeholder="Search people, courses, majors..." title="Type in a name"></input>
-          </Col>
+          </Col> 
         </Row>
       </Container>
       </Layout>
