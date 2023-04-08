@@ -25,7 +25,6 @@ function ProfileSchedule({courseData}) {
   }
   console.log(courseData)
   return (
-    <Layout>
       <Container className="mt-md-1 ">
         <Row className="pt-1 mt-2">
             <Col>
@@ -52,7 +51,6 @@ function ProfileSchedule({courseData}) {
             </Col>
           </Row>
       </Container>
-    </Layout>
   );
 }
 
