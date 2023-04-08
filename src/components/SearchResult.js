@@ -1,8 +1,25 @@
 import React from 'react'
 import david from '../images/team/david.jpg'
+import blank from '../images/searchResults/blankStar.png'
+import filled from '../images/searchResults/filledStar.png'
+
 import '../css/searchResult.css'
 
+
+function changeTofilled() {
+  let blankStar = document.getElementById("star");
+
+  if (blankStar.getAttribute('src') === blank) {
+    blankStar.setAttribute('src', filled);
+  }
+  else {
+    blankStar.setAttribute('src', blank);
+  }
+}
+
+
 const SearchResult = ({data}) => {
+
   return (
     // Individual person
     <div className='searchResults_card'>
@@ -16,9 +33,10 @@ const SearchResult = ({data}) => {
                   )
               })}
           </h4>
-
-          
+        <img id="star" src={blank} 
+             alt="BlankStar" className = 'searchResults_star' onClick={changeTofilled}></img> 
         </div>
+        <></>
     </div>
         
   )
