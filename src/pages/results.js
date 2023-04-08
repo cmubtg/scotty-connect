@@ -9,8 +9,13 @@ import SearchResult from "../components/SearchResult";
 import SearchData from '../data/searchData.json'
 
 import '../css/searchResult.css'
-
+import {navigate} from 'gatsby'
 function Results() {
+
+  function handleResultClick() {
+    navigate('/profile')
+  }
+
   return (
     <Layout>
       <Container className="mt-md-1 pt-md-4">
@@ -21,7 +26,9 @@ function Results() {
             <div className="searchResults_container">
             {SearchData.map((resData, index) => {
                 return (
-                  <SearchResult key={index} data={resData}/>
+                  <div onClick={handleResultClick} className='searchResults_card searchResults_border'>
+                    <SearchResult key={index} data={resData}/>
+                  </div>
                 )
             })}
             </div>
