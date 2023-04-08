@@ -37,7 +37,6 @@ function changeTofilled() {
           <img id="star" src={blank} 
              alt="BlankStar" className = 'searchResults_star' onClick={changeTofilled}></img> 
         </div>
-        </div>
       </>
 
         
