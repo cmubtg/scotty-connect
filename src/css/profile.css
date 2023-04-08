@@ -1,4 +1,10 @@
-
+.divider{
+    height: 60px;
+    width: 100vw;
+}
+.course_schedule{
+    padding-bottom: 4px;
+}
 
 .accordion{
     display: flex;
@@ -8,6 +14,7 @@
 
 .profile{
     cursor: pointer;
+    /* margin-left: -7px; */
 }
 /* Year Header stuff */
 .profile_title{
@@ -37,16 +44,20 @@
 .profile_body {
     max-height: 0px;
     overflow: hidden;
-    transition: all 0.5s cubic-bezier(0,1,0,1);
+    transition: max-height 0.5s cubic-bezier(0,1,0,1);
     margin-left: 5%;
     margin-bottom: 5%;
 }
 
 .show {
-    max-height: 999px;
-    height: auto;
-    transition: all 0.5s cubic-bezier(0,1,0,1);
+    transition: 0.5s cubic-bezier(0,1,0,1);
+    max-height: 999px !important;
 }
+.inactive{
+    color: grey;
+}
+
+
 .profile_year{
     /* background: red; */
     margin-bottom: 10px;

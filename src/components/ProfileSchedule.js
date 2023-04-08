@@ -26,9 +26,10 @@ function ProfileSchedule({courseData}) {
   console.log(courseData)
   return (
     <Layout>
-      <Container className="mt-md-1 pt-md-4">
+      <Container className="mt-md-1 ">
         <Row className="pt-1 mt-2">
             <Col>
+            <h4 className='course_schedule'>Course Schedule</h4>
               <div className='accordion'>    
                   {courseData.map((yearInfo, i) => {
                     return(
@@ -36,10 +37,10 @@ function ProfileSchedule({courseData}) {
 
                         <div className='profile_title' onClick={() => toggle(i)}>
                             <div className={`profile_btn ${selected === i ? 'active' : ''}`}></div>
-                            <h3>{`Year ${i+1}`}</h3>
+                            <h3 className={` ${selected === i ? '' : 'inactive'}`}>{`Year ${i+1}`}</h3>
                         </div>
 
-                        <div className={`${selected === i ? 'profile_body show' : 'profile_body '}`}>
+                        <div className={`profile_body ${selected === i ? 'show' : ''}`}>
                           {/* Schedule for each semester in the year */}
                           <SemesterSchedule semesterInfo={yearInfo[0]}/>
                           <SemesterSchedule semesterInfo={yearInfo[1]}/>

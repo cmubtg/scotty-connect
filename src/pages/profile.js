@@ -10,6 +10,7 @@ import SearchData from '../data/searchData.json'
 import ProfileSchedule from "../components/ProfileSchedule.js";
 
 import '../css/profile.css'
+import '../css/searchResult.css'
 
 function Profile() {
 
@@ -18,15 +19,22 @@ function Profile() {
       <Container className="mt-md-1 pt-md-4">
         <Row className="pt-1 mt-5">
           <Col>
+            <div className='divider'>
 
-            <h2>Course Schedule</h2>
-            {/* Temporarily using searchData array to pass course info
-            Ideally each user is routed based on id/name */}
-            <SearchResult data={SearchData[0]}/>
+            </div>
+            {/* 
+              Temporarily using searchData array to pass course info
+              Ideally each user is routed based on id/name 
+            */}
+            <div className='searchResults_card searchResults_card_left'>
+              <SearchResult data={SearchData[0]}/>
+            </div>
+            
+            
 
+        
           </Col>
         </Row>
-        
         {/* Accordion of all courses user has taken over the years */}
         <ProfileSchedule courseData={SearchData[0].courses}/>
         
