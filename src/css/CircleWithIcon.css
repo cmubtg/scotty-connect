@@ -10,7 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: box-shadow 0.2s ease-in-out;
+  transition: box-shadow 0.05s ease-in-out;
 }
 
 .circle:hover:not(.modal-open) {
@@ -66,16 +66,14 @@
   background-color: rgba(16, 16, 16, 0.7);
   position: absolute;
   top: 7.4vh;
-  left: -22.1vw;
+  right: -22%;
   width: 25vw;
-  height: 45vh;
   z-index: 3;
   display: flex;
   flex-direction: column;
   align-items: left;
   text-align: left;
   color: white;
-  max-width: 40vw;
   border-radius: 12px;
   padding: 37px;
 }
@@ -88,21 +86,29 @@
 
 .modal-overlay h2 {
   margin-top: 0;
-  font-size: 18px;
+  font-size: 20px;
   color: white;
 }
 .modal-overlay h3{
   margin-top: 0;
-  font-size: 14px;
+  font-size: 16px;
   color: white;
+}
+
+.modal-overlay h4{
+  margin-top: 0;
+  font-size: 20px;
+  color: white;
+  line-height: 3;
 }
 
 .modal-overlay p {
   margin-bottom: 0;
-  font-size: 12px;
+  font-size: 14px;
   color: #CCCCCC;
 }
 
 .circle.modal-open:hover {
   box-shadow: none;
 }
+
