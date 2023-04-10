@@ -12,6 +12,7 @@
     /* margin-bottom: 30px; */
 }
 
+
 .profile{
     cursor: pointer;
     /* margin-left: -7px; */
@@ -43,16 +44,22 @@
 
 .profile_body {
     max-height: 0px;
+    /* max-height: 0%; */
     overflow: hidden;
-    transition: max-height 0.5s cubic-bezier(0,1,0,1);
+    transition: max-height 1s cubic-bezier(0,1,0,1);
     margin-left: 5%;
     margin-bottom: 5%;
 }
 
 .show {
-    transition: 0.5s cubic-bezier(0,1,0,1);
-    max-height: 999px !important;
+    transition: max-height 1s cubic-bezier(0,1,0,1);
+    max-height: 15vw !important;
+    /* max-height:  */
 }
+/* .hide{
+    max-height: 0px !important;
+} */
+
 .inactive{
     color: grey;
 }
