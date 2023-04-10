@@ -26,17 +26,18 @@ function changeTofilled() {
       <>
         <img src={david} alt="David Photo" className='searchResults_img'/>
           <div className='searchResults_info'>
-          <h2 className='searchResults_name'>{data.name}</h2>
-          <h4>
-          {data.major.map((major, index) => {
-              return (
-                <span className='searchResults_major'>{major}  </span>
-              )
-          })}
-          </h4>
-          <img id="star" src={blank} 
-             alt="BlankStar" className = 'searchResults_star' onClick={changeTofilled}></img> 
-        </div>
+            <h2 className='searchResults_name'>{data.name}</h2>
+            <h4>
+            {data.major.map((major, index) => {
+                return (
+                  <span className='searchResults_major'>{major}  </span>
+                )
+            })}
+            </h4>
+            <img id="star" src={blank} 
+              alt="BlankStar" className = 'searchResults_star' onClick={changeTofilled}>
+            </img> 
+          </div>
       </>
 
         
