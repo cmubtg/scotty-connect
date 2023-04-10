@@ -9,8 +9,9 @@ import {navigate} from 'gatsby'
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import Layout from "../components/Layout"
-import './index.css'
+import Layout from "../components/Layout";
+import CircleWithIcon from "../components/CircleWithIcon"
+import './index.css';
 
 const searchText = () =>
 {
@@ -49,12 +50,12 @@ function Home() {
       <Container className="mt-md-1 pt-md-4">
         <Row className="pt-1 mt-5">
           <Col>
+            <CircleWithIcon/>
             <h1 class="home" style={{ marginTop: '20%' }}> Let's get on with&nbsp;</h1><h1 class="home2">course planning</h1><h1 class="home">!</h1>
 
             {/* TODO: Make Search Bar its own component */}
             <input type="text" id="searchBar" className="searchbar" placeholder="Search people, courses, majors..." title="Type in a name"></input>
-            
-          </Col>
+          </Col> 
         </Row>
       </Container>
       </Layout>
