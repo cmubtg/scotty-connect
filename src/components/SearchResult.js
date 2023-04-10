@@ -4,15 +4,17 @@ import blank from '../images/searchResults/blankStar.png';
 import filled from '../images/searchResults/filledStar.png';
 import '../css/searchResult.css';
 
-const SearchResult = ({data}) => {
+const SearchResult = ({data, index}) => {
+  const starId = `star-${index}`;
+
   function changeTofilled(event) {
     event.preventDefault();
     event.stopPropagation();
-    let blankStar = document.getElementById("star");
-    if (blankStar.getAttribute('src') === blank) {
-      blankStar.setAttribute('src', filled);
+    const star = event.target;
+    if (star.getAttribute('src') === blank) {
+      star.setAttribute('src', filled);
     } else {
-      blankStar.setAttribute('src', blank);
+      star.setAttribute('src', blank);
     }
   }
 
@@ -24,11 +26,11 @@ const SearchResult = ({data}) => {
         <h4>
           {data.major.map((major, index) => {
             return (
-              <span className='searchResults_major'>{major}  </span>
+              <span className='searchResults_major' key={index}>{major}  </span>
             )
           })}
         </h4>
-        <img id="star" src={blank} alt="BlankStar" className='searchResults_star' onClick={changeTofilled}/>
+        <img id={starId} src={blank} alt="BlankStar" className='searchResults_star' onClick={changeTofilled}/>
       </div>
     </>
   )
