@@ -11,7 +11,7 @@
     border-radius: 20px;
 }
 .searchResults_card {
-    
+    position: relative;
     width: 100%;
     max-height: 75%;
     margin-top: 1rem;
@@ -45,16 +45,19 @@
     justify-content: center;
     margin-left: 1rem;
     margin-top: 0px;
+    padding-right: 50px;
 }
 .searchResults_name {
     float: left;
     font-size: 25px;
 }
-.searchResults_major{
+.searchResults_major {
     font-size: 15px;
     font-weight: 400;
     color: grey;
-}
+    white-space: normal;
+  }
+  
 .searchResults_info h4{
     margin-top: -15px;
 }
@@ -63,7 +66,10 @@
     width: 30px;
     height: 30px;
     position: absolute;
-    right: 300px;
+    right: 4%;
     flex-direction: row;
     justify-content: center;
+    z-index: 5;
 }
+
+
