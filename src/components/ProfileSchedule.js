@@ -15,13 +15,13 @@ import '../css/profile.css'
 // 
 function ProfileSchedule({courseData}) {
 
-  const [selected, setSelected] = useState(0)
+  const [selected, setSelected] = useState([0])
 
   const toggle = (i) => {
-    if (selected == i){
-      return setSelected(null)
+    if (selected.includes(i)){
+      return setSelected(selected.filter((item) => item !== i))
     }
-    setSelected(i)
+    setSelected([...selected, i])
   }
   console.log(courseData)
   return (
@@ -35,11 +35,11 @@ function ProfileSchedule({courseData}) {
                       <div className='profile'>
 
                         <div className='profile_title' onClick={() => toggle(i)}>
-                            <div className={`profile_btn ${selected === i ? 'active' : ''}`}></div>
-                            <h3 className={` ${selected === i ? '' : 'inactive'}`}>{`Year ${i+1}`}</h3>
+                            <div className={`profile_btn ${selected.includes(i)? 'active' : ''}`}></div>
+                            <h3 className={` ${selected.includes(i)? '' : 'inactive'}`}>{`Year ${i+1}`}</h3>
                         </div>
 
-                        <div className={`profile_body ${selected === i ? 'show' : ''}`}>
+                        <div className={`profile_body ${selected.includes(i) ? 'show' : 'hide'}`}>
                           {/* Schedule for each semester in the year */}
                           <SemesterSchedule semesterInfo={yearInfo[0]}/>
                           <SemesterSchedule semesterInfo={yearInfo[1]}/>
