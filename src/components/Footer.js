@@ -6,7 +6,7 @@ function Footer () {
     footer : {
       position: "absolute",
       bottom: "0",
-      width: "100%",
+      width: "95%",
       height: "5rem",
       left: "2.5rem",
       right: "2.5rem",
