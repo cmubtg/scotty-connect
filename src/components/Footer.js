@@ -1,8 +1,9 @@
 import React from "react";
 import Logo from "../images/btg-logo-white-red-footer.svg";
-import MailIcon from "../images/mail.svg";
-import LinkedInIcon from "../images/linkedin.svg";
-import InstagramIcon from "../images/instagram.svg";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
 function Footer() {
   const footerStyles = {
@@ -58,8 +59,8 @@ function Footer() {
       gap: "10px",
     },
     icon: {
-      height: "1.5rem",
-      width: "1.5rem",
+      height: "2rem",
+      width: "2rem",
       fill: "#D3D3D3",
       marginTop: "-10px",
     },
@@ -84,28 +85,16 @@ function Footer() {
             </div>
           </div>
           <div style={{ display: "flex", alignItems: "center" }}>
-            <a href="https://www.instagram.com/cmubtg" target="_blank" rel="noopener noreferrer">
-              <img
-                src={InstagramIcon}
-                alt="Instagram Icon"
-                style={{ ...footerStyles.icon, marginRight: "10px" }}
-              />
-            </a>
-            <a href="mailto:info@cmubtg.com">
-              <img
-                src={MailIcon}
-                alt="Mail Icon"
-                style={{ ...footerStyles.icon, marginRight: "10px" }}
-              />
-            </a>
-            <a href="https://www.linkedin.com/company/cmubtg/" target="_blank" rel="noopener noreferrer">
-              <img
-                src={LinkedInIcon}
-                alt="LinkedIn Icon"
-                style={footerStyles.icon}
-              />
-            </a>
-          </div>
+        <a href="https://www.instagram.com/cmubtg" target="_blank" rel="noopener noreferrer" style={{ marginRight: "10px" }}>
+          <FontAwesomeIcon icon={faInstagram} size="lg" style={{ color: "#818181" }} />
+        </a>
+        <a href="mailto:info@cmubtg.com" style={{ marginRight: "10px" }}>
+          <FontAwesomeIcon icon={faEnvelope} size="lg" style={{ color: "#818181" }} />
+        </a>
+        <a href="https://www.linkedin.com/company/cmubtg/" target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faLinkedinIn} size="lg" style={{ color: "#818181" }} />
+        </a>
+      </div>
         </div>
       </footer>
     </>
