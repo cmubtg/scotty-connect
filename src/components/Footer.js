@@ -4,9 +4,9 @@ import Logo from '../images/btg-logo-white-red-footer.svg';
 function Footer () {
   const footerStyles = {
     footer : {
-      position: "relative",
+      position: "absolute",
       bottom: "0",
-      width: "auto",
+      width: "100%",
       height: "5rem",
       left: "2.5rem",
       right: "2.5rem",
@@ -21,6 +21,7 @@ function Footer () {
       height: "3rem",
       width: "3rem",
       borderWidth: '0',
+      zIndex: '1',
     },
     textContainer : {
       display: "flex",
@@ -46,7 +47,7 @@ function Footer () {
   }
   return (
     <div>
-      {/*<div style={footerStyles.divider}></div>*/}
+    {/*<div style={footerStyles.divider}></div>*/}
       <footer style={footerStyles.footer}>
         <div style={footerStyles.container}>
           <div style={footerStyles.textContainer}>
