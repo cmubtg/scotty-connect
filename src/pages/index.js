@@ -51,7 +51,8 @@ function Home() {
         <Row className="pt-1 mt-5">
           <Col>
             <CircleWithIcon/>
-            <h1 class="home" style={{ marginTop: '20%' }}> Let's get on with&nbsp;</h1><h1 class="home2">course planning</h1><h1 class="home">!</h1>
+            <h1 class="home" style={{ marginTop: '20%' }}> Let's get on with&nbsp;
+            </h1><h1 class="home2">course planning</h1><h1 class="home2">. 📓</h1>
 
             {/* TODO: Make Search Bar its own component */}
             <input type="text" id="searchBar" className="searchbar" placeholder="Search people, courses, majors..." title="Type in a name"></input>

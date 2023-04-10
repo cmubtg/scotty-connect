@@ -4,14 +4,15 @@
 .home{
     font-style: normal;
     font-weight: 700;
-    font-size: 55px;
+    font-size: 45px;
     line-height: 66px;
     display: inline-block;
+    text-align: center;
 }
 .home2{
     font-style: normal;
     font-weight: 700;
-    font-size: 55px;
+    font-size: 45px;
     line-height: 66px;
     display: inline-block;
     color: #EC454C;
