@@ -241,3 +241,12 @@ html {
 .icon-link:hover {
   color: inherit;
 }
+
+.saved-text {
+  position: absolute;
+  top: 17px;
+  right: 18%; 
+  font-size: 18px;
+  z-index: 15;
+  color: white;
+}
