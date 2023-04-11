@@ -31,6 +31,10 @@ function Results() {
               showClearIcon={true}
             />
 
+            <p className="search-results-count">
+              Search Results: {SearchData.length}
+            </p>
+
             <div className="searchResults_container">
               {SearchData.map((resData, index) => {
                 return (
