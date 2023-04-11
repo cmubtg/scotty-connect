@@ -28,6 +28,7 @@ function Results() {
             <SearchBar
               initialValue={searchQuery}
               handleSearch={handleSearch}
+              showClearIcon={true}
             />
 
             <div className="searchResults_container">
