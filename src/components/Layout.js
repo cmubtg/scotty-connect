@@ -4,7 +4,6 @@ import '../css/styles.css';
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import FadeIn from "react-fade-in";
-import { Link } from 'gatsby';
 
 export default function Layout({ children, showSavedText = false }) {
   return (
@@ -14,11 +13,7 @@ export default function Layout({ children, showSavedText = false }) {
         <div style={{paddingBottom: "5rem"}}>
           {children}
         </div>
-        {showSavedText && (
-          <Link to="/saved" className="saved-text" style={{ cursor: "pointer", textDecoration: "none", color: "white" }}>
-            Saved
-          </Link>
-        )}
+        {showSavedText}
         <Footer/>
       </FadeIn>
     </div>
