@@ -66,7 +66,12 @@
     width: 30px;
     height: 30px;
     position: absolute;
+<<<<<<< HEAD
     right: 4%;
+=======
+    right: 300px; 
+    display: flex;
+>>>>>>> b69b413 (changed')
     flex-direction: row;
     justify-content: center;
     z-index: 5;
