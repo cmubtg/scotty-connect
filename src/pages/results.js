@@ -5,7 +5,6 @@ import Container from "react-bootstrap/Container";
 import Layout from "../components/Layout";
 import SearchResult from "../components/SearchResult";
 import SearchData from '../data/searchData.json';
-import '../css/searchResult.css';
 import { navigate } from 'gatsby';
 import SearchBar from "../components/SearchBar";
 
@@ -21,7 +20,7 @@ function Results() {
   }
 
   return (
-    <Layout>
+    <Layout showSavedText={true}>
       <Container className="mt-md-1 pt-md-4">
         <Row className="pt-1 mt-5">
           <Col>

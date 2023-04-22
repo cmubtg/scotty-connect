@@ -1,12 +1,11 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../css/styles.css'
+import '../css/styles.css';
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import FadeIn from "react-fade-in";
 
-export default function Layout({ children }) {
-  
+export default function Layout({ children, showSavedText = false }) {
   return (
     <div style={{minHeight: "100vh", position: "relative"}}>
       <FadeIn>
@@ -14,6 +13,7 @@ export default function Layout({ children }) {
         <div style={{paddingBottom: "5rem"}}>
           {children}
         </div>
+        {showSavedText}
         <Footer/>
       </FadeIn>
     </div>
