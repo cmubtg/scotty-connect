@@ -1,0 +1,41 @@
+:root {
+    font-family: 'Lato';
+  }
+  
+  .searchbar-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .searchbar {
+    margin-top: 23px;
+    border-radius: 25px;
+    padding: 10px 50px 10px 20px;
+    border: none;
+    background-color: #F2F2F2;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    color: #BDBDBD;
+    width: 100%;
+  }
+  
+  .searchbar:focus {
+    outline: none;
+  }
+  
+  .searchbar-clear {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #BDBDBD;
+  }
+  
