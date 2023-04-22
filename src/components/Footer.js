@@ -72,7 +72,9 @@ function Footer() {
       <footer style={footerStyles.footer}>
         <div style={footerStyles.container}>
           <div style={footerStyles.logoContainer}>
+            <a href='https://www.cmubtg.com' target="_blank" rel="noopener noreferrer">
             <img src={Logo} alt="BTG Logo" style={footerStyles.box} />
+            </a>
             <div style={footerStyles.textContainer}>
               <div>
                 <span style={footerStyles.text}>

@@ -1,31 +1,17 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import '../css/CircleWithIcon.css';
 
 function CircleWithIcon() {
   const [showModal, setShowModal] = useState(false);
-  const modalRef = useRef();
-
-  const handleModalClose = (e) => {
-    if (modalRef.current && !modalRef.current.contains(e.target)) {
-      setShowModal(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener('mousedown', handleModalClose);
-    return () => {
-      document.removeEventListener('mousedown', handleModalClose);
-    };
-  }, []);
 
   return (
-    <div className="circle" onMouseEnter={() => setShowModal(true)} onMouseLeave={() => setShowModal(false)}>
+    <div className="circle" onMouseEnter={() => setShowModal(true)} onMouseLeave={(e) => !e.relatedTarget || !e.relatedTarget.classList.contains('modal-overlay') ? setShowModal(false) : null}>
       <div className="icon">
         <div className="small-circle"></div>
         <div className="rectangle">{showModal && <div className="triangle"></div>}</div>
       </div>
       {showModal && (
-        <div ref={modalRef} className="modal-overlay">
+        <div className="modal-overlay">
           <h2><b>Welcome to ScottyConnect! 👋</b></h2>
           <h4> </h4>
           <h3>We help you navigate your academic path by providing a list of 
