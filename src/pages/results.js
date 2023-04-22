@@ -76,7 +76,7 @@ class UserListTemplate extends React.Component {
       options:ops
     }
     this.setMajors = this.setMajors.bind(this)
-
+    console.log(this.state.options)
   }
 
   setMajors(input) {
@@ -96,11 +96,12 @@ class UserListTemplate extends React.Component {
 
         <Container className="mt-2">
           <MySelect
+            className="searchbar"
             options={this.state.options}
             isMulti
             onChange={this.setMajors}
             allowSelectAll = {true}
-            value={this.state.majors}
+            // value={window.history.state.search}
             placeholder="See all our majors"
           />
             {this.state.majors.map((m) => (
@@ -110,10 +111,6 @@ class UserListTemplate extends React.Component {
               />
             ))}
         </Container>
-      </Container>
-
-      <Container>
-
       </Container>
 
       </Layout>       
