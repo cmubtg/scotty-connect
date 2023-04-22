@@ -86,3 +86,4 @@ collections:
       - { label: "Major", name: "major", widget: "string" }
       - { label: "Role", name: "role", widget: "string"}
       - { label: "Photo", name: "photo", widget: image }
+

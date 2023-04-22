@@ -1,20 +1,43 @@
-[
-    {
-        "name" : "John Doe",
-        "major" : ["Electrical Engineering","Business Administration"],
-        "year" : "2023",
-        "courses" : ["67-272", "15-150"]
-    },
-    {
-        "name" : "Jane Doe",
-        "major" : ["Electrical Engineering"],
-        "year": "2022",
-        "courses" : ["67-272", "15-213"]
-    },
-    {
-        "name" : "Joe Joe",
-        "major" : ["Information Systems"],
-        "year": "2027",
-        "courses" : ["67-250", "15-151"]
-    }
-]
+{
+    "students": [
+        {
+            "name" : "John Doe",
+            "major" : ["Electrical Engineering","Business Administration"],
+            "year" : "2023",
+            "courses" : ["67-272", "15-150"]
+        },
+        {
+            "name" : "Jane Doe",
+            "major" : ["Electrical Engineering"],
+            "year": "2022",
+            "courses" : ["67-272", "15-213"]
+        },
+        {
+            "name" : "Joe Joe",
+            "major" : ["Information Systems"],
+            "year": "2027",
+            "courses" : ["67-250", "15-151"]
+        },
+        {
+            "name" : "Jeffrey John",
+            "major" : ["Electrical Engineering","Business Administration"],
+            "year" : "2025",
+            "courses" : ["67-272", "15-150"]
+        },
+        {
+            "name" : "Jimmy Jan",
+            "major" : ["Electrical Engineering"],
+            "year": "2022",
+            "courses" : ["67-272", "15-213"]
+        },
+        {
+            "name" : "Jennifer Jay",
+            "major" : ["Information Systems"],
+            "year": "2027",
+            "courses" : ["67-250", "15-151"]
+        }
+    ]
+        
+
+}
+    
