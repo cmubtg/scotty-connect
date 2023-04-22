@@ -3,21 +3,28 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Layout from "../components/Layout"
-import UserDisplay from "../components/UserDisplay"
 import MySelect from "../components/MySelect"
-import PropTypes from 'prop-types'
 import SearchData from '../data/searchData.json'
 import SearchResult from '../components/SearchResult'
+import {navigate} from 'gatsby'
+
 
 import '../css/searchResult.css'
+
+function handleResultClick() {
+  navigate('/profile')
+}
+
 
 function MajorContainer(props) {
   return (
     <Row className="pt-1 mt-5">
       <h3>{props.major}</h3>
-    {Array.from(props.users).map((user) => (
-      <SearchResult data={user}></SearchResult>
-    ))}
+      <div className="searchResults_container">
+        {Array.from(props.users).map((user) => (
+            <SearchResult data={user} onClick={handleResultClick}></SearchResult>
+        ))}
+      </div>
     </Row>
   )
 }
