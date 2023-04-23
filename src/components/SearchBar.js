@@ -5,6 +5,8 @@ import MySelect from "./MySelect"
 import coursesData from '../data/coursesData'
 import SearchData from '../data/searchData.json'
 
+import searchIcon from '../images/searchIconBtg.png'
+
 import {get_majors, get_options} from '../utils/searchHelpers'
 
 import '../css/SearchBar.css'
@@ -38,19 +40,23 @@ export default function SearchBar() {
 
   return (
     <div class="search_container">
-        <h1 class="search_title"> Let's get on with <span>course planning</span> 📓</h1> 
-        <MySelect
-            id="searchBar"
-            className="searchbar"
-            options={ops}
-            isMulti
-            onChange={setMajors}
-            allowSelectAll = {true}
-            // value={window.history.state.search}
-            placeholder="See all our majors"
-          />
+         <h1 class="search_title"> Let's get on with <span>course planning.</span> 📓</h1> 
+          <div class="searchBar_container">
+            <img src={searchIcon} alt="search icon" class="search_icon"/>
+            <MySelect
+              id="searchBar"
+              //  className="searchbar"
+              options={ops}
+              isMulti
+              onChange={setMajors}
+              allowSelectAll = {true}
+              // value={window.history.state.search}
+              placeholder="Search courses, majors..."
+            />
+          </div>
+        
 
-        {/* <input type="text" id="searchBar" className="searchbar" placeholder="Search people, courses, majors..." title="Type in a name"></input> */}
+         {/* <input type="text" id="searchBar" className="searchbar" placeholder="Search people, courses, majors..." title="Type in a name"></input> */}
 
     </div>
   )

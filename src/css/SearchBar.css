@@ -4,36 +4,88 @@
     align-items: center;
     justify-content: center;
     margin-top: 20%;
-
 }
-
 .search_title{
     font-style: normal;
     font-weight: 700;
-    font-size: 45px;
+    font-size: 2.3rem;
     line-height: 66px;
     display: inline-block;
     text-align: center;
+    width: 80%;
 }
 .search_title span{
     color: #EC454C;
 }
-#searchBar{
-    width: 90%;
-    margin-top: 2vh;
-    /* height: 100px; */
-    /* border-radius: 30px; */
-}
-#searchBar div{
-    /* background-color: red;
-    width: 100%; */
-    /* margin-top: 50px;
+
+
+.searchBar_container{
     width: 100%;
-    max-width: 600px;
-    height: 50px;
-    border: 1px solid #BDBDBD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.searchBar_container img{
+    width: 20px;
+    height: 20px;
+    left: 3vw;
+    top: 0.5vh;
+    /* border-radius: 5px; */
+    /* background-color: white; */
+    pointer-events: none;
+    z-index: 2;
+    position: relative;
+}
+
+
+#searchBar{
+    /* background-image: url("../images/searchIconBTG.png"); */
+    /* background-size: 20px 20px;  */
+    /* background-position: 10px 10px; */
+    /* background-repeat: no-repeat; */
+    width: 95%;
+    font-size: 16px;
+    margin-top: 1.2vh;
+    border: none;
+  }
+
+/* Selecting Text/input field */
+/* Text that says see all our majors */
+#searchBar .css-1jqq78o-placeholder{
+    /* margin-left: 20px; */
+}
+
+#searchBar .css-qbdosj-Input{
+    /* margin-left: 10px; */
+}
+
+#searchBar .css-1fdsijx-ValueContainer, 
+#searchBar .css-3w2yfm-ValueContainer{
+    margin-left: 3vw;
+}
+
+/* Remove dropdown on the side */
+#searchBar .css-1hb7zxy-IndicatorsContainer{
+    display: none;
+}
+
+/* Selects input field from MySelect component */
+#searchBar .css-13cymwt-control, 
+#searchBar .css-1fdsijx-ValueContainer{
+    height: 55px;
+    border-radius: 25px;
+}
+#searchBar .css-t3ipsp-control{
     border-radius: 10px;
-    padding: 0 10px;
-    font-size: 20px;
-    outline: none; */
+    height: 55px;
+}
+
+/* Style Individual tags */
+#searchBar .css-1p3m7a8-multiValue{
+    /* background-color: var(--btg_red); */
+    /* color: white; */
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
 }

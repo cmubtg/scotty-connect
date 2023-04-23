@@ -1,6 +1,6 @@
 .circle {
-  width: 37px;
-  height: 37px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background-color: #EC454C;
   position: absolute;
@@ -13,7 +13,7 @@
 }
 
 .circle:hover:not(.modal-open) {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }
 
 .icon {
@@ -51,7 +51,7 @@
 
 .triangle {
   position: absolute;
-  top: 25px;
+  top: 20px;
   left: 50%;
   transform: translateX(-50%);
   width: 0;
