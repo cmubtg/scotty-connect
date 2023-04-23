@@ -1,18 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import {navigate} from 'gatsby'
-import Select from 'react-select';
 
+import MySelect from "./MySelect"
 import coursesData from '../data/coursesData'
+import SearchData from '../data/searchData.json'
 
+import {get_majors, get_options} from '../utils/searchHelpers'
 
 import '../css/SearchBar.css'
 
-const searchText = () =>
-{
-  return(
-    <h className = "searchText"> Search people, courses, majors...</h>
-  )
-}
 
 const handleSearch = () =>{
   const input = document.getElementById('searchBar')
@@ -21,34 +17,38 @@ const handleSearch = () =>{
 }
 
 
-
 export default function SearchBar() {
+  const [majors, setMajors] = useState(get_majors(SearchData));
+  const [ops, setOps] = useState(get_options(majors));
 
-// Go to results page when enter key is pressed
+  // Go to results page when enter key is pressed
+  // Changes options based on selected majors
   useEffect(() => {
     const input = document.getElementById('searchBar')
-    console.log(input)
     const listener = event => {
       if (event.code === "Enter") {
-        handleSearch(input)
+        navigate('/results', {state: {majors} })
       }
     };
     input.addEventListener("keydown", listener);
     return () => {
       input.removeEventListener("keydown", listener);
     };
-  }, []);
-
-const [selectedOption, setSelectedOption] = useState(null);
+  }, [majors]);
 
   return (
     <div class="search_container">
         <h1 class="search_title"> Let's get on with <span>course planning</span> 📓</h1> 
-        <Select id="searchBar"
-            defaultValue={selectedOption}
-            onChange={setSelectedOption}
-            options={coursesData.options}
-        />
+        <MySelect
+            id="searchBar"
+            className="searchbar"
+            options={ops}
+            isMulti
+            onChange={setMajors}
+            allowSelectAll = {true}
+            // value={window.history.state.search}
+            placeholder="See all our majors"
+          />
 
         {/* <input type="text" id="searchBar" className="searchbar" placeholder="Search people, courses, majors..." title="Type in a name"></input> */}
 
