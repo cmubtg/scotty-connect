@@ -3,7 +3,7 @@
 
 //Created by David You <dsyou@andrew.cmu.edu>
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {navigate} from 'gatsby'
 
 import Row from "react-bootstrap/Row";
@@ -22,11 +22,7 @@ const searchText = () =>
   )
 }
 
-const handleSearch = () =>{
-  const input = document.getElementById('searchBar')
-  var search = input.value;
-  navigate('/results', {state: {search} })
-}
+
 
 
 
@@ -43,7 +39,7 @@ function get_majors(users) {
   var all_majors = {"Electrical Engineering":[], "Business Administration":[], "Information Systems":[]}
   users.forEach(
     function(user,index) {
-      console.log(user);
+      // console.log(user);
       var r = user.major
       r.forEach(
         function(indMajor,index) {
@@ -66,9 +62,37 @@ function get_options(majors) {
   return ops;
 }
 
+  // setMajors(input) {
+  //   this.setState({majors:input})
+  // }
+
 function Home() {
-  const majors = get_majors(SearchData.students)
-  const ops = get_options(majors)
+  const [majors, setMajors] = useState(get_majors(SearchData.students));
+  const [ops, setOps] = useState([]);
+
+  function setMajors_input(input) {
+    setMajors(input)
+    console.log("majors is now", majors)
+  }
+  
+  const handleSearch = () =>{
+    const input = document.getElementById('searchBar')
+    // var search = input.value;
+    // console.log("search", search)
+    console.log("Majors", majors);
+    navigate('/results', {state: {majors} })
+  }
+
+
+  useEffect(() => {
+    // setSelected([...selected, i])
+    // setMajors([...majors, get_majors(SearchData.students)])
+    // console.log("majors", majors)
+    // console.log(get_options(majors))
+    // setOps( ops => [...ops, get_options(majors)])
+    setOps(get_options(majors))
+    console.log("majors is now", majors)
+  }, []);
 
   // Go to results page when enter key is pressed
   useEffect(() => {
@@ -76,14 +100,16 @@ function Home() {
     console.log(input)
     const listener = event => {
       if (event.code === "Enter") {
-        handleSearch(input)
+        // handleSearch(input)
+        console.log("Majors before navigating:", majors);
+        navigate('/results', {state: {majors} })
       }
     };
     input.addEventListener("keydown", listener);
     return () => {
       input.removeEventListener("keydown", listener);
     };
-  }, []);
+  }, [majors]);
 
   return (
     <Layout>
@@ -99,7 +125,7 @@ function Home() {
             className="searchbar"
             options={ops}
             isMulti
-            // onChange={this.setMajors}
+            onChange={setMajors}
             allowSelectAll = {true}
             // value={window.history.state.search}
             placeholder="See all our majors"

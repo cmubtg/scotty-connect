@@ -15,6 +15,14 @@ function handleResultClick() {
   navigate('/profile')
 }
 
+function get_labels(majors) {
+  var labels = []
+  majors.forEach((major) => {
+    labels.push(major[0])
+  })
+  console.log("labels",labels)
+  return labels
+}
 
 function MajorContainer(props) {
   return (
@@ -67,14 +75,21 @@ function get_options(majors) {
 class UserListTemplate extends React.Component {
 
   constructor(props) {
+    console.log("majors", window.history.state.majors);
     super(props)
     const { data } = this.props
     const majors = get_majors(data.students)
+    // const majors = window.history.state.majors
     const ops = get_options(majors)
     this.state = {
-      majors:[ops[0]],
+      majors: window.history.state.majors,
       options:ops
     }
+    // this.state = {
+    //   majors: [window.history.state.majors[0]],
+    //   options: ops
+    // }
+
     this.setMajors = this.setMajors.bind(this)
     console.log(this.state.options)
   }
@@ -101,7 +116,7 @@ class UserListTemplate extends React.Component {
             isMulti
             onChange={this.setMajors}
             allowSelectAll = {true}
-            // value={window.history.state.search}
+            value={this.state.majors}
             placeholder="See all our majors"
           />
             {this.state.majors.map((m) => (
