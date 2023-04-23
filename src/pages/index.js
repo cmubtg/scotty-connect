@@ -22,7 +22,7 @@ function Home() {
           </Col> 
         </Row>
       </Container>
-      </Layout>
+    </Layout>
   );
 }
 

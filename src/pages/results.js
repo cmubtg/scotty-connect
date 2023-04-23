@@ -2,8 +2,7 @@ import React, {useState, useEffect} from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import Layout from "../components/Layout"
-
+import Layout from "../components/Layout";
 import SearchResult from "../components/SearchResult";
 
 import SearchData from '../data/searchData.json'
@@ -68,7 +67,6 @@ function Results() {
                   )
               })} */}
             </div>
-            
           </Col>
         </Row>
       </Container>
@@ -77,4 +75,3 @@ function Results() {
 }
 
 export default Results;
-

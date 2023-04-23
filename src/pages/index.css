@@ -6,7 +6,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 45px;
-    line-height: 66px;
+    line-height: 80px;
     display: inline-block;
     text-align: center;
 }
@@ -28,5 +28,36 @@
     color: #BDBDBD;
 }
 .searchbar{
+
     margin-top: 50px;
 } */
+
+.searchbar-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.searchbar-clear-icon {
+  position: absolute;
+  right: 20px;
+  top: 48%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #949494;
+}
+
+@media (max-width: 768px) {
+    .searchbar-wrapper {
+      padding-top: 25px; 
+    }
+    .searchbar-clear-icon {
+        top: 62%;
+      }
+  }
+
+  .search-results-count {
+    margin-top: 13px;
+    margin-bottom: 3px;
+    font-size: 15px;
+  }
