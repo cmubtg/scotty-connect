@@ -1,48 +1,71 @@
-import React, { useState } from "react";
+import React, {useState, useEffect} from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Layout from "../components/Layout";
 import SearchResult from "../components/SearchResult";
-import SearchData from '../data/searchData.json';
-import '../css/searchResult.css';
-import { navigate } from 'gatsby';
-import SearchBar from "../components/SearchBar";
+
+import SearchData from '../data/searchData.json'
+
+import MySelect from "../components/MySelect"
+import {get_majors,get_labels, get_options, hasAllElems} from '../utils/searchHelpers'
+
+import '../css/searchResult.css'
+import {navigate} from 'gatsby'
+
+
+function handleResultClick() {
+  navigate('/profile')
+}
+
 
 function Results() {
-  const [searchQuery, setSearchQuery] = useState(window.history.state.search);
-
-  function handleSearch(query) {
-    setSearchQuery(query);
-  }
+  console.log(window.history.state.majors)
+  const [allMajors, setAllMajors] = useState(get_majors(SearchData));
+  const [selectedMajors, setSelectedMajors] = useState(window.history.state.majors)
+  const [options, setOptions] = useState(get_options(allMajors))
 
   function handleResultClick() {
     navigate('/profile')
   }
 
+  const selectedStudents = SearchData.filter(studentInfo => hasAllElems(studentInfo.major, get_labels(selectedMajors)))
+  console.log("selected",selectedStudents)
+  console.log("selected majors",selectedMajors)
+  console.log("all",allMajors)
   return (
     <Layout>
       <Container className="mt-md-1 pt-md-4">
         <Row className="pt-1 mt-5">
           <Col>
-            <SearchBar
-              initialValue={searchQuery}
-              handleSearch={handleSearch}
-              showClearIcon={true}
+            {/* Search Results Bar at top */}
+            <MySelect
+              className="searchbar"
+              options={options}
+              isMulti
+              onChange={setSelectedMajors}
+              allowSelectAll = {true}
+              value={selectedMajors}
+              placeholder="See all our majors"
             />
 
-            <p className="search-results-count">
-              Search Results: {SearchData.length}
-            </p>
+            {/* Add result counts */}
+
+            {/* <input type="text" className="searchbar" value={window.history.state.search} title="Type in a name"></input> */}
 
             <div className="searchResults_container">
-              {SearchData.map((resData, index) => {
-                return (
-                  <div onClick={handleResultClick} className='searchResults_card searchResults_border'>
-                    <SearchResult key={index} data={resData}/>
-                  </div>
-                )
-              })}
+              {selectedStudents.map((studentData, index) => (
+                <div onClick={handleResultClick} className='searchResults_card searchResults_border'>
+                  <SearchResult key={index} data={studentData}/>
+                </div>
+              ))}
+              {/* {SearchData.map((resData, index) => {
+                  return (
+                    <div onClick={handleResultClick} className='searchResults_card searchResults_border'>
+                      <SearchResult key={index} data={resData}/>
+                    </div>
+                  )
+              })} */}
             </div>
           </Col>
         </Row>
