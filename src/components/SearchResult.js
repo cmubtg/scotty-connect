@@ -26,7 +26,8 @@ const SearchResult = ({data, index}) => {
         <h4>
           {data.major.map((major, index) => {
             return (
-              <span className='searchResults_major' key={index}>{major}  </span>
+              <><span className='searchResults_major' key={index}> {index > 0 ? 'and' : ''} {major}</span>
+              </>
             )
           })}
         </h4>
