@@ -26,16 +26,16 @@ export function check_keys(str,dict) {
   }
   
 export function get_majors(users) {
-    var all_majors = {"Electrical Engineering":[], "Business Administration":[], "Information Systems":[]}
+    var all_majors = {}         
     users.forEach(
       function(user,index) {
         var r = user.major
         r.forEach(
           function(indMajor,index) {
-            var k = check_keys(indMajor,all_majors)
-            if(k!=="") {
-                all_majors[k].push(user)
-              }
+            if(!(indMajor in all_majors)) {
+              all_majors[indMajor] = []
+            }
+            all_majors[indMajor].push(user)
           }
         )
       }
