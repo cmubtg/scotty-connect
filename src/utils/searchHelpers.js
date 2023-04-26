@@ -12,7 +12,6 @@ export function get_labels(arr) {
   arr.forEach((major) => {
     labels.push(major.label)
   })
-  console.log("labels",labels)
   return labels
 }
 

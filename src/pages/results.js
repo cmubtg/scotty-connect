@@ -29,13 +29,23 @@ function Results() {
     navigate('/profile')
   }
 
-  
+  const arr_equal = (a,b) => {
+    return a.length === b.length && a.every((v,i)=> v === b[i])
+  }
+
   // Gets how closely a student's majors match the search
-  function getScore(studentMajors, selectedMajors){
+  // studentMajors = Array of major for specific student
+  // e.g ['Computer Science', 'Mathematics']
+  function getScore(studentMajors){
     var score = 0
+    var selectedMajorsLabel = get_labels(selectedMajors)
+    // Put perfect matches on top
+    if (arr_equal(studentMajors, selectedMajorsLabel)){
+      return 100
+    }
     for (var i = 0; i < studentMajors.length; i++) {
       var major = studentMajors[i]
-      if (selectedMajors.includes(major)){
+      if (selectedMajorsLabel.includes(major)){
         score += 1
       }
     }
@@ -44,22 +54,23 @@ function Results() {
 
   // Sorting function
   function compareStudentScore(a,b){
-    return getScore(a) - getScore(b)
+    return getScore(a.major) - getScore(b.major)  
   }
 
   // Gets students who match selected majors
   // Orders it based on score (how closely their majors match the search)
   function selectStudents(){
-    var selectedStudents = []
+    var res = []
     for (var i = 0; i < SearchData.length; i++) {
       var studentInfo = SearchData[i]
-      var score = getScore(studentInfo.major,get_labels(selectedMajors))
+      var score = getScore(studentInfo.major)
       // Dont include the students that dont match at all
-      if (score > 0) selectedStudents.push(studentInfo)
+      if (score > 0) res.push(studentInfo)
     }
-    return selectedStudents.sort(compareStudentScore)
+    return res.sort(compareStudentScore).reverse()
   }
   
+
   const selectedStudents = selectStudents();
   return (
     <Layout>
