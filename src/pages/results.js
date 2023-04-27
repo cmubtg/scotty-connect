@@ -14,9 +14,7 @@ import '../css/searchResult.css'
 import {navigate} from 'gatsby'
 
 
-function handleResultClick() {
-  navigate('/profile')
-}
+
 
 
 function Results() {
@@ -25,9 +23,9 @@ function Results() {
   const [selectedMajors, setSelectedMajors] = useState(window.history.state.majors)
   const [options, setOptions] = useState(get_options(allMajors))
 
-  function handleResultClick() {
-    navigate('/profile')
-  }
+  function handleResultClick(studentData) {
+    navigate('/profile', {state: {studentData}})
+  };
 
   const arr_equal = (a,b) => {
     return a.length === b.length && a.every((v,i)=> v === b[i])
@@ -94,8 +92,8 @@ function Results() {
 
             <div className="searchResults_container">
               {selectedStudents.map((studentData, index) => (
-                <div onClick={handleResultClick} className='searchResults_card searchResults_border'>
-                  <SearchResult key={index} data={studentData}/>
+                <div onClick={() => handleResultClick(studentData)} data={studentData}  className='searchResults_card searchResults_border'>
+                  <SearchResult data={studentData}/>
                 </div>
               ))}
               {/* {SearchData.map((resData, index) => {

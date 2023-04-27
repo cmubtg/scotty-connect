@@ -13,7 +13,7 @@ import '../css/profile.css'
 import '../css/searchResult.css'
 
 function Profile() {
-
+  const studentData = window.history.state.studentData
   return (
     <Layout>
       <Container className="mt-md-1 pt-md-4">
@@ -22,12 +22,9 @@ function Profile() {
             <div className='divider'>
 
             </div>
-            {/* 
-              Temporarily using searchData array to pass course info
-              Ideally each user is routed based on id/name 
-            */}
+            
             <div className='searchResults_card searchResults_card_left'>
-              <SearchResult data={SearchData[0]}/>
+              <SearchResult data={studentData}/>
             </div>
             
             

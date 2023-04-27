@@ -5,6 +5,7 @@ import filled from '../images/searchResults/filledStar.png';
 import '../css/searchResult.css';
 
 const SearchResult = ({data, index}) => {
+  console.log("data", data)
   const starId = `star-${index}`;
 
   function changeTofilled(event) {
